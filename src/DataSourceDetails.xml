@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans>
+
+	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
+	<property name="url"><value>jdbc:mysql://localhost:3306/vaadin</value></property>
+		 
+		<!-- 	 <property name="url"><value>jdbc:mysql://localhost:3306/springhb_db</value></property>
+		-->
+		<property name="username"><value>root</value></property>
+		<property name="password"><value>root</value></property>
+	</bean>
+	
+<!-- 	<bean id="s1" class="com.example.vaadindb.Dsimpl">
+ -->
+ 	<bean id="s1" class="com.example.vaadindb.databaseImpl">
+		<property name="datasource"><ref bean="datasource"/></property>
+	</bean>
+
+</beans>
